@@ -10,7 +10,10 @@ export default class HelloController extends BaseController {
 
   initialize() {
     this.app.get(HelloController.basePath, this.sayHello.bind(this));
-    this.app.get(`${HelloController.basePath}/greet/:name`, this.greet.bind(this));
+    this.app.get(
+      `${HelloController.basePath}/greet/:name`,
+      this.greet.bind(this)
+    );
   }
 
   sayHello(req, res) {
